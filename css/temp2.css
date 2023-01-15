@@ -1,3 +1,8 @@
+/* start var  */
+:root{
+    --main-color: #19c8fa;
+}
+/* end  var  */
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -48,6 +53,10 @@ container {
 }
  /* start header */
 header {
+    position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 2;
 
 }
 
@@ -56,6 +65,7 @@ header .container {
     justify-content: space-between;
     align-items: center;
     position: relative;
+    min-height: 97px;
 
 }
 header .container::after {
@@ -77,5 +87,72 @@ header .logo img{
 }
 header nav{
     flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+header nav .toggle-menu{
+    color: white;
+    size: 22px;
+}
+@media (min-width: 768px) {
+    header nav .toggle-menu {
+      display: none;
+    }
+  }
+header nav ul{
+    display: flex;
+
+}
+@media (max-width: 767px) {
+    header nav ul {
+      display: none;}
+    }
+    header nav .toggle-menu:hover + ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: black
+    
+    }
+    header nav  ul li a{
+        padding: 15px !important;
+    }
+header nav ul li a {
+    padding: 40px  10px;
+display: block;                    
+color: white;
+text-decoration: none;
+transition: 0.3s;
+font-size: 14px;
+position: relative;
+z-index: 2;
+
+}
+header nav ul li a.active,
+header nav ul li a:hover {
+    color: var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+
+}
+header nav .form{
+    width: 40px;
+    height: 30px;
+    position:relative;
+    margin-left: 30px;
+border-left: 1px solid white;
+
+}
+header nav .form i{
+    color: white;
+    position: absolute;
+    font-size: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+
 }
  /* end  header */
